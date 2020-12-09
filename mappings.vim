@@ -1,8 +1,26 @@
+let mapleader = ' '
+
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 tnoremap <Esc> <C-\><C-n>
 
-nnoremap <c-n> :call OpenTerminal()<CR>
+nnoremap <c-t> :call OpenTerminal()<CR>
+
+nmap <silent> <leader>n :noh <CR>
+
+nnoremap <silent> <Leader><Left> :vertical resize -10<CR>
+nnoremap <silent> <Leader><Right> :vertical resize +10<CR>
+nnoremap <silent> <Leader><Up> :resize -10<CR>
+nnoremap <silent> <Leader><Down> :resize +10<CR>
+
+vnoremap <C-c> "+y
+nnoremap <C-c> "+y
+
+vnoremap <C-v> "+p
+nnoremap <C-v> "+p
+
+nnoremap <C-x> "+d
+vnoremap <C-x> "+d
 
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
@@ -35,7 +53,7 @@ nnoremap <S-A-Down> :t .<CR>==
 nnoremap <S-A-Up> :t .-1<CR>==
 inoremap <S-A-Down> <Esc>:t .<CR>==gi
 inoremap <S-A-Up> <Esc>:t .-1<CR>==gi
-vnoremap <S-A-Down> :t '>+1<CR>gv=gv
+vnoremap <S-A-Down> :t '><CR>gv=gv
 vnoremap <S-A-Up> :t '<-1<CR>gv=gv
 
 nmap <silent> gd <Plug>(coc-definition)

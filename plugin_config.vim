@@ -31,13 +31,15 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ale_fixers = {
 			\  'javascript': ['prettier','eslint'],
 			\  'typescript': ['prettier','eslint'],
+			\  'css': ['prettier'],
+			\  'php': ['prettier'],
 			\	 'javascriptreact': ['prettier','eslint'],
+			\		'python': ['autopep8', 'isort'],
 			\}
 
 let g:ale_linters = {
 			\   'php': ['php'],
 		  \		'rust': ['analyzer'],
-			\		'python': ['autopep8', 'isort'],
 			\}
 
 let g:ale_completion_autoimport = 1
