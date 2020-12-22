@@ -11,7 +11,6 @@ let g:lightline = {
       \ },
       \ }
 
-let g:ale_disable_lsp = 1
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.tsx, *.js'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.tsx, *.js'
 let g:closetag_filetypes = 'html,xhtml,phtml'
@@ -28,24 +27,6 @@ let NERDTreeMapOpenInTab='\r'
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-let g:ale_fixers = {
-			\  'javascript': ['prettier','eslint'],
-			\  'typescript': ['prettier','eslint'],
-			\  'css': ['prettier'],
-			\  'php': ['prettier'],
-			\	 'javascriptreact': ['prettier','eslint'],
-			\		'python': ['autopep8', 'isort'],
-			\}
-
-let g:ale_linters = {
-			\   'php': ['php'],
-		  \		'rust': ['analyzer'],
-			\}
-
-let g:ale_completion_autoimport = 1
-let g:ale_fix_on_save = 1
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
@@ -61,3 +42,25 @@ let g:fzf_action = {
 			\}
 
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+let g:blamer_enabled = 1
+
+let b:ale_linters = {
+	\ 'javascript': ['eslint'],
+	\ 'javascriptreact': ['eslint']
+	\}
+
+let b:ale_fixers = {
+	\'javascript': ['prettier', 'eslint'],
+	\'javascriptreact': ['prettier', 'eslint']
+	\}
+
+let g:ale_completion_autoimport = 1
+let g:ale_completion_enabled = 1
+let g:ale_linters_explicit = 1
+

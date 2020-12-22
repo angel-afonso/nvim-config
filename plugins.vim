@@ -19,7 +19,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'neomake/neomake'
 Plug 'vim-vdebug/vdebug'
-Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'pangloss/vim-javascript'
@@ -27,5 +26,7 @@ Plug 'wakatime/vim-wakatime'
 Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'APZelos/blamer.nvim'
+Plug 'dense-analysis/ale'
 
 call plug#end()

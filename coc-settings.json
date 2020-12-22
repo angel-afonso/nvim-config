@@ -1,7 +1,13 @@
 {
-	"diagnostic.displayByAle": true,
 	"coc.preferences.formatOnSaveFiletypes": [
-		"dart"
+		"dart",
+		"css",
+		"json",
+		"markdown",
+		"python",
+		"php",
+		"dart",
+		"go"
 	],
   "languageserver": {
     "golang": {
