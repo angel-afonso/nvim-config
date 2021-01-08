@@ -31,4 +31,7 @@ autocmd BufNewFile,BufRead *.rs setlocal noexpandtab tabstop=4 shiftwidth=4 soft
 autocmd BufNewFile,BufRead *.php setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.py setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
+packadd termdebug "Enable terminal-debug
+let termdebugger = "rust-gdb" "Use rust-gdb instead of default gdb
+
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif

@@ -50,17 +50,23 @@ nmap <silent> gr <Plug>(coc-references)
 
 let g:blamer_enabled = 1
 
-let b:ale_linters = {
-	\ 'javascript': ['eslint'],
-	\ 'javascriptreact': ['eslint']
-	\}
+" let g:ale_linters = {
+" 	\ 'javascript': ['eslint'],
+" 	\ 'javascriptreact': ['eslint'],
+" 	\ 'typescript': ['eslint'],
+" 	\ 'typescriptreact': ['eslint']
+" 	\}
 
-let b:ale_fixers = {
-	\'javascript': ['prettier', 'eslint'],
-	\'javascriptreact': ['prettier', 'eslint']
-	\}
+" let g:ale_fixers = {
+" 	\'javascript': ['prettier', 'eslint'],
+" 	\'javascriptreact': ['prettier', 'eslint'],
+" 	\'typescript': ['prettier', 'eslint'],
+" 	\'typescriptreact': ['prettier', 'eslint']
+" 	\}
 
-let g:ale_completion_autoimport = 1
-let g:ale_completion_enabled = 1
-let g:ale_linters_explicit = 1
+" let g:ale_completion_autoimport = 1
+" let g:ale_completion_enabled = 1
+" let g:ale_linters_explicit = 1
+" let g:ale_lint_on_save = 1
+" let g:ale_fix_on_save = 1
 
