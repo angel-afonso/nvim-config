@@ -50,6 +50,7 @@ nmap <silent> gr <Plug>(coc-references)
 
 let g:blamer_enabled = 1
 
+let g:android_sdk_path = '/home/Android/Sdk'
 " let g:ale_linters = {
 " 	\ 'javascript': ['eslint'],
 " 	\ 'javascriptreact': ['eslint'],
