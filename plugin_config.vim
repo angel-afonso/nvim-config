@@ -50,24 +50,10 @@ nmap <silent> gr <Plug>(coc-references)
 
 let g:blamer_enabled = 1
 
-let g:android_sdk_path = '/home/Android/Sdk'
-" let g:ale_linters = {
-" 	\ 'javascript': ['eslint'],
-" 	\ 'javascriptreact': ['eslint'],
-" 	\ 'typescript': ['eslint'],
-" 	\ 'typescriptreact': ['eslint']
-" 	\}
-
-" let g:ale_fixers = {
-" 	\'javascript': ['prettier', 'eslint'],
-" 	\'javascriptreact': ['prettier', 'eslint'],
-" 	\'typescript': ['prettier', 'eslint'],
-" 	\'typescriptreact': ['prettier', 'eslint']
-" 	\}
-
-" let g:ale_completion_autoimport = 1
-" let g:ale_completion_enabled = 1
-" let g:ale_linters_explicit = 1
-" let g:ale_lint_on_save = 1
-" let g:ale_fix_on_save = 1
-
+let g:vimspector_enable_mappings = 'HUMAN'
+nmap ee :call vimspector#Launch()<CR>
+nmap <leader>dx :VimspectorReset<CR>
+nmap <leader>de :VimspectorEval
+nmap <leader>dw :VimspectorWatch
+nmap <leader>do :VimspectorShowOutput
+let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-go', 'CodeLLDB' ]

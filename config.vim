@@ -27,11 +27,11 @@ set noexpandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 
 
-autocmd BufNewFile,BufRead *.rs setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd BufNewFile,BufRead *.php setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd BufNewFile,BufRead *.js setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd BufNewFile,BufRead *.jsx setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd BufNewFile,BufRead *.py setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd BufNewFile,BufRead *.rs set noexpandtab tabstop=4
+autocmd BufNewFile,BufRead *.php set noexpandtab tabstop=4
+autocmd BufNewFile,BufRead *.js set noexpandtab tabstop=4
+autocmd BufNewFile,BufRead *.jsx set noexpandtab tabstop=4
+autocmd BufNewFile,BufRead *.py set noexpandtab tabstop=4
 
 packadd termdebug "Enable terminal-debug
 let termdebugger = "rust-gdb" "Use rust-gdb instead of default gdb

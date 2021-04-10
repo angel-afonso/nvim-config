@@ -1,23 +1,22 @@
 {
-	"coc.preferences.formatOnSaveFiletypes": [
-		"dart",
-		"css",
-		"json",
-		"markdown",
-		"python",
-		"php",
-		"dart",
-		"go",
-		"typescript",
-		"javascript",
-		"javascriptreact",
-		"typescriptreact"
-	],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "dart",
+    "css",
+    "json",
+    "markdown",
+    "python",
+    "php",
+    "go",
+    "typescript",
+    "javascript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
   "languageserver": {
     "golang": {
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
     }
-	}
+  }
 }

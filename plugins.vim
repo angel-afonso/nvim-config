@@ -26,9 +26,8 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'APZelos/blamer.nvim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'severin-lemaignan/vim-minimap'
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'thosakwe/vim-flutter'
-Plug 'hsanson/vim-android'
 Plug 'udalov/kotlin-vim'
+Plug 'puremourning/vimspector'
+Plug 'pest-parser/pest.vim'
 
 call plug#end()
