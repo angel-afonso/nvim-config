@@ -12,11 +12,15 @@
     "javascriptreact",
     "typescriptreact"
   ],
+  "coc.preferences.hoverTarget": "float",
   "languageserver": {
     "golang": {
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
     }
+  },
+  "go.goplsOptions": {
+    "staticcheck": true
   }
 }

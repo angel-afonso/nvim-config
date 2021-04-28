@@ -1,6 +1,23 @@
+let g:vim_plug_fpath = expand(stdpath('data') . '/site/autoload/plug.vim')
+if !filereadable(g:vim_plug_fpath)
+  if !executable('curl')
+    echoerr 'Curl not available on your system, you may install vim-plug by yourself.'
+    finish
+  endif
+  echomsg 'Installing Vim-plug on your system'
+  let g:vim_plug_furl = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  silent execute printf('!curl -fLo %s --create-dirs %s', g:vim_plug_fpath, g:vim_plug_furl)
+  augroup plug_init
+      autocmd!
+      autocmd VimEnter * PlugInstall --sync | quit |source $MYVIMRC
+  augroup END
+endif
+
+let g:PLUGIN_HOME=expand(stdpath('data') . '/plugged')
+
 call plug#begin("~/.vim/plugged")
 
-Plug 'dracula/vim'
+Plug 'kaicataldo/material.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
