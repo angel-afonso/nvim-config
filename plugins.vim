@@ -16,7 +16,8 @@ endif
 let g:PLUGIN_HOME=expand(stdpath('data') . '/plugged')
 
 call plug#begin("~/.vim/plugged")
-
+Plug 'jparise/vim-graphql'
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'kaicataldo/material.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
