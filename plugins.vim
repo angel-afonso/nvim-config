@@ -46,5 +46,6 @@ Plug 'kaicataldo/material.vim'
 
 " EXTRA
 Plug 'tpope/vim-fugitive'
+Plug 'github/copilot.vim'
 
 call plug#end()

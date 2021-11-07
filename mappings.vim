@@ -13,14 +13,14 @@ nnoremap <silent> <Leader><Right> :vertical resize +10<CR>
 nnoremap <silent> <Leader><Up> :resize -10<CR>
 nnoremap <silent> <Leader><Down> :resize +10<CR>
 
-vnoremap <C-c> "+y
-nnoremap <C-c> "+y
+" vnoremap <C-c> "+y
+" nnoremap <C-c> "+y
 
-vnoremap <C-v> "+p
-nnoremap <C-v> "+p
+" vnoremap <C-v> "+p
+" nnoremap <C-v> "+p
 
-nnoremap <C-x> "+d
-vnoremap <C-x> "+d
+" nnoremap <C-x> "+d
+" vnoremap <C-x> "+d
 
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
