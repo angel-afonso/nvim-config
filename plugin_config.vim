@@ -1,5 +1,7 @@
 let g:lens#disabled_filetypes = ['nerdtree', 'fzf']
 
+" let g:coc_node_path = '/home/angel/.nvm/versions/node/v14.17.6/bin/node'
+
 colorscheme material 
 let g:material_theme_style = 'darker'
 let g:material_terminal_italics = 1
@@ -38,8 +40,8 @@ let g:lightline = {
 call lightline#coc#register()
 
 function! LightlineGitbranch() abort
-    if exists('*fugitive#head')
-        let branch = fugitive#head()
+    if exists('*FugitiveHead')
+        let branch = FugitiveHead()
         return branch !=# '' ? branch . ' ' : ''
    endif
     return fugitive#head()
@@ -82,44 +84,42 @@ let g:fzf_action = {
 			\}
 
 
-" autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-" function! s:show_documentation()
-"   if (index(['vim','help'], &filetype) >= 0)
-"     execute 'h '.expand('<cword>')
-"   elseif (coc#rpc#ready())
-"     call CocActionAsync('doHover')
-"   else
-"     execute '!' . &keywordprg . " " . expand('<cword>')
-"   endif
-" endfunction
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
 
-" let g:blamer_enabled = 1
+let g:blamer_enabled = 1
 
-" let g:vimspector_enable_mappings = 'HUMAN'
-" nmap ee :call vimspector#Launch()<CR>
-" nmap <leader>dx :VimspectorReset<CR>
-" nmap <leader>de :VimspectorEval
-" nmap <leader>dw :VimspectorWatch
-" nmap <leader>do :VimspectorShowOutput
-" let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-go', 'CodeLLDB' ]
+let g:go_diagnostics_enabled = 0
+let g:go_metalinter_enabled = []
 
-" let g:go_diagnostics_enabled = 0
-" let g:go_metalinter_enabled = []
-
-" let g:go_jump_to_error = 0
+let g:go_jump_to_error = 0
 
 let g:go_fmt_command = "goimports"
 
-" let g:go_auto_sameids = 0
+let g:go_auto_sameids = 0
 
-" let g:go_highlight_types = 1
-" let g:go_highlight_fields = 1
-" let g:go_highlight_functions = 1
-" let g:go_highlight_function_calls = 1
-" let g:go_highlight_operators = 1
-" let g:go_highlight_extra_types = 1
-" let g:go_highlight_build_constraints = 1
-" let g:go_highlight_generate_tags = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+
+nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <C-g> <cmd>Telescope live_grep<cr>
+nnoremap <leader>gs <cmd>Telescope git_status<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>

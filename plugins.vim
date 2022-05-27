@@ -34,8 +34,11 @@ Plug 'alvan/vim-closetag'
 Plug 'AndrewRadev/tagalong.vim'
 
 " EDITOR
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'APZelos/blamer.nvim'
