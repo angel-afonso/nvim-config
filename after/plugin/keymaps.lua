@@ -54,3 +54,6 @@ keymap("n", "<leader>fb", ":Telescope buffers", default_opts)
 
 -- File explorer
 keymap("n", "<C-b>", ":NvimTreeToggle<CR>", default_opts)
+
+-- LSP
+keymap("n", "rn", "<cmd>lua vim.lsp.buf.rename()<CR>", default_opts)

@@ -2,6 +2,13 @@ local api = vim.api
 local g = vim.g
 local opt = vim.opt
 
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
+
+opt.encoding = "UTF-8"
+opt.expandtab = true
+
 -- Remap leader and local leader to <Space>
 api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 g.mapleader = " "
@@ -19,7 +26,7 @@ opt.smartcase = true -- Smart case
 opt.updatetime = 250 --Decrease update time
 opt.signcolumn = "yes" -- Always show sign column
 opt.clipboard = "unnamedplus" -- Access system clipboard
-opt.timeoutlen = 300	--	Time in milliseconds to wait for a mapped sequence to complete.
+opt.timeoutlen = 300 --	Time in milliseconds to wait for a mapped sequence to complete.
 
 -- Highlight on yank
 vim.cmd [[
@@ -30,14 +37,13 @@ vim.cmd [[
 ]]
 
 function _G.statusline()
-    local filepath = '%f'
-    local align_section = '%='
-    local percentage_through_file = '%p%%'
-    return string.format(
-        '%s%s%s',
-        filepath,
-        align_section,
-        percentage_through_file
-    )
+  local filepath = '%f'
+  local align_section = '%='
+  local percentage_through_file = '%p%%'
+  return string.format(
+    '%s%s%s',
+    filepath,
+    align_section,
+    percentage_through_file
+  )
 end
-
