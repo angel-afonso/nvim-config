@@ -50,9 +50,9 @@ function M.setup()
 
         -- Colorscheme
         use {
-            "sainnhe/everforest",
+            "folke/tokyonight.nvim",
             config = function()
-                vim.cmd "colorscheme everforest"
+                vim.cmd "colorscheme tokyonight"
             end,
         }
 
@@ -112,34 +112,34 @@ function M.setup()
             end,
         }
 
-        -- Easy hopping
-        use {
-            "phaazon/hop.nvim",
-            cmd = { "HopWord", "HopChar1" },
-            config = function()
-                require("hop").setup {}
-            end,
-            disable = true,
-        }
+        -- -- Easy hopping
+        -- use {
+        --     "phaazon/hop.nvim",
+        --     cmd = { "HopWord", "HopChar1" },
+        --     config = function()
+        --         require("hop").setup {}
+        --     end,
+        --     disable = true,
+        -- }
 
-        -- Easy motion
-        use {
-            "ggandor/lightspeed.nvim",
-            keys = { "s", "S", "f", "F", "t", "T" },
-            config = function()
-                require("lightspeed").setup {}
-            end,
-        }
+        -- -- Easy motion
+        -- use {
+        --     "ggandor/lightspeed.nvim",
+        --     keys = { "s", "S", "f", "F", "t", "T" },
+        --     config = function()
+        --         require("lightspeed").setup {}
+        --     end,
+        -- }
 
-        -- Markdown
-        use {
-            "iamcco/markdown-preview.nvim",
-            run = function()
-                vim.fn["mkdp#util#install"]()
-            end,
-            ft = "markdown",
-            cmd = { "MarkdownPreview" },
-        }
+        -- -- Markdown
+        -- use {
+        --     "iamcco/markdown-preview.nvim",
+        --     run = function()
+        --         vim.fn["mkdp#util#install"]()
+        --     end,
+        --     ft = "markdown",
+        --     cmd = { "MarkdownPreview" },
+        -- }
 
         -- Status line
         use {
@@ -153,12 +153,13 @@ function M.setup()
 
         -- Treesitter
         use {
-            "nvim-treesitter/nvim-treesitter",
-            run = ":TSUpdate",
-            config = function()
-                require("config.treesitter").setup()
-            end,
+           "nvim-treesitter/nvim-treesitter",
+           run = ":TSUpdate",
+           config = function()
+               require("config.treesitter").setup()
+           end,
         }
+
         use {
             "SmiteshP/nvim-gps",
             requires = "nvim-treesitter/nvim-treesitter",
@@ -177,30 +178,23 @@ function M.setup()
             requires = { { 'nvim-lua/plenary.nvim' } }
         }
 
+        use { "williamboman/mason.nvim" }
+        use { "williamboman/mason-lspconfig.nvim" }
+        use { "glepnir/lspsaga.nvim" }
+
         -- LSP
         use {
-            'VonHeikemen/lsp-zero.nvim',
-            config = function()
-                require('config.lsp').setup()
-            end,
-            requires = {
-                -- Soporte LSP
-                { 'neovim/nvim-lspconfig' },
-                { 'williamboman/mason.nvim' },
-                { 'williamboman/mason-lspconfig.nvim' },
-
-                -- Autocompletado
-                { 'hrsh7th/nvim-cmp' },
-                { 'hrsh7th/cmp-buffer' },
-                { 'hrsh7th/cmp-path' },
-                { 'saadparwaiz1/cmp_luasnip' },
-                { 'hrsh7th/cmp-nvim-lsp' },
-                { 'hrsh7th/cmp-nvim-lua' },
-
-                -- Snippets
-                { 'L3MON4D3/LuaSnip' },
-                { 'rafamadriz/friendly-snippets' },
-            }
+          "neovim/nvim-lspconfig",
+          opt = true,
+          event = "BufReadPre",
+          config = function()
+            require("config.lsp").setup()
+          end,
+          requires = {
+              { 'glepnir/lspsaga.nvim' },
+              { "williamboman/mason.nvim" },
+              { "williamboman/mason-lspconfig.nvim" },
+          }
         }
 
         -- File explorer
@@ -212,15 +206,6 @@ function M.setup()
             requires = {
                 'kyazdani42/nvim-web-devicons'
             },
-        }
-
-        -- Flutter
-        use {
-            "akinsho/flutter-tools.nvim",
-            requires = { "nvim-lua/plenary.nvim" },
-            config = function()
-                require("config.flutter").setup()
-            end,
         }
 
         -- Bootstrap Neovim

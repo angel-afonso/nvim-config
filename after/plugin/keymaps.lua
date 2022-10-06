@@ -19,6 +19,9 @@ keymap("v", "<S-tab>", "<gv", default_opts)
 keymap("v", "<tab>", ">gv", default_opts)
 
 -- Copy/Cut/Paste
+keymap("v", "dd", "\"_d", default_opts)
+keymap("n", "dd", "\"_d", default_opts)
+
 
 keymap("v", "<C-c>", "\"+y", default_opts)
 keymap("n", "<C-c>", "\"+y", default_opts)
@@ -52,8 +55,12 @@ keymap("n", "<C-g>", ":Telescope live_grep<CR>", default_opts)
 keymap("n", "<leader>gd", ":Telescope git_status<CR>", default_opts)
 keymap("n", "<leader>fb", ":Telescope buffers", default_opts)
 
--- File explorer
 keymap("n", "<C-b>", ":NvimTreeToggle<CR>", default_opts)
+keymap("i", "<C-b>", ":NvimTreeToggle<CR>", default_opts)
+keymap("v", "<C-b>", ":NvimTreeToggle<CR>", default_opts)
 
 -- LSP
-keymap("n", "rn", "<cmd>lua vim.lsp.buf.rename()<CR>", default_opts)
+keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', default_opts)
+keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', default_opts)
+keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', default_opts)
+
