@@ -53,7 +53,7 @@ function M.setup()
             "folke/tokyonight.nvim",
             config = function()
                 vim.cmd "colorscheme tokyonight"
-            end,
+            end
         }
 
         -- Startup screen
@@ -111,35 +111,6 @@ function M.setup()
                 require("Comment").setup {}
             end,
         }
-
-        -- -- Easy hopping
-        -- use {
-        --     "phaazon/hop.nvim",
-        --     cmd = { "HopWord", "HopChar1" },
-        --     config = function()
-        --         require("hop").setup {}
-        --     end,
-        --     disable = true,
-        -- }
-
-        -- -- Easy motion
-        -- use {
-        --     "ggandor/lightspeed.nvim",
-        --     keys = { "s", "S", "f", "F", "t", "T" },
-        --     config = function()
-        --         require("lightspeed").setup {}
-        --     end,
-        -- }
-
-        -- -- Markdown
-        -- use {
-        --     "iamcco/markdown-preview.nvim",
-        --     run = function()
-        --         vim.fn["mkdp#util#install"]()
-        --     end,
-        --     ft = "markdown",
-        --     cmd = { "MarkdownPreview" },
-        -- }
 
         -- Status line
         use {
