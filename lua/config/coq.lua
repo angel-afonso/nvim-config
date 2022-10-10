@@ -8,8 +8,6 @@ function M.setup()
   require "coq_3p" {
     { src = "nvimlua", short_name = "nLUA", conf_only = false }, -- Lua
     { src = "bc", short_name = "MATH", precision = 6 }, -- Calculator
-    { src = "cow", trigger = "!cow" }, -- cow command
-    { src = "figlet", trigger = "!big" }, -- figlet command
     {
       src = "repl",
       sh = "zsh",

@@ -28,6 +28,7 @@ function M.setup()
     local saga = require 'lspsaga'
     saga.init_lsp_saga()
 
+    require("config.lsp.handlers").setup()
 end
 
 return M

@@ -55,6 +55,7 @@ keymap("n", "<C-g>", ":Telescope live_grep<CR>", default_opts)
 keymap("n", "<leader>gd", ":Telescope git_status<CR>", default_opts)
 keymap("n", "<leader>fb", ":Telescope buffers", default_opts)
 
+-- Tree
 keymap("n", "<C-b>", ":NvimTreeToggle<CR>", default_opts)
 keymap("i", "<C-b>", ":NvimTreeToggle<CR>", default_opts)
 keymap("v", "<C-b>", ":NvimTreeToggle<CR>", default_opts)
@@ -63,4 +64,14 @@ keymap("v", "<C-b>", ":NvimTreeToggle<CR>", default_opts)
 keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', default_opts)
 keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', default_opts)
 keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', default_opts)
+
+-- Editor 
+keymap('n', '<A-Down>', ':m .+1<CR>==', default_opts)
+keymap('n', '<A-Up>', ':m .-2<CR>==', default_opts)
+
+keymap('i', '<A-Down>', '<Esc>:m .+1<CR>==gi', default_opts)
+keymap('i', '<A-Up>', '<Esc>:m .-2<CR>==gi', default_opts)
+
+keymap('v', '<A-Down>', ":m '>+1<CR>gv==gv", default_opts)
+keymap('v', '<A-Up>', ":m '<-2<CR>gv==gv", default_opts)
 
