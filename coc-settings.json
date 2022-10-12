@@ -1,0 +1,26 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "dart",
+    "css",
+    "json",
+    "markdown",
+    "python",
+    "php",
+    "graphql",
+    "go",
+    "typescript",
+    "rust",
+    "javascript",
+    "javascriptreact",
+    "typescriptreact",
+    "xml"
+  ],
+  "coc.preferences.hoverTarget": "float",
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    }
+  }
+}
