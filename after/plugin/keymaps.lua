@@ -19,22 +19,27 @@ keymap("v", "<S-tab>", "<gv", default_opts)
 keymap("v", "<tab>", ">gv", default_opts)
 
 -- Copy/Cut/Paste
+keymap("i", "dd", "\"_d", default_opts)
 keymap("v", "dd", "\"_d", default_opts)
 keymap("n", "dd", "\"_d", default_opts)
 
-
+keymap("i", "<C-c>", "\"+y", default_opts)
 keymap("v", "<C-c>", "\"+y", default_opts)
 keymap("n", "<C-c>", "\"+y", default_opts)
 
-keymap("n", "<C-v>", "\"+p", default_opts)
-keymap("v", "<C-v>", "\"+p", default_opts)
+keymap("i", "<C-v>", "\"_dP", default_opts)
+keymap("n", "<C-v>", "\"_dP", default_opts)
+keymap("v", "<C-v>", "\"_dP", default_opts)
 
+keymap("i", "<C-x>", "\"+d", default_opts)
 keymap("n", "<C-x>", "\"+d", default_opts)
 keymap("v", "<C-x>", "\"+d", default_opts)
 
 -- Switch buffer
 keymap("n", "<S-h>", ":bprevious<CR>", default_opts)
 keymap("n", "<S-l>", ":bnext<CR>", default_opts)
+keymap("n", "gt", "gn", default_opts)
+keymap("n", "gT", "gb", default_opts)
 
 -- Cancel search highlighting with ESC
 keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", default_opts)
@@ -53,17 +58,13 @@ keymap("n", "<C-Down>", ":resize +1<CR>", default_opts)
 keymap("n", "<C-p>", ":Telescope find_files<CR>", default_opts)
 keymap("n", "<C-g>", ":Telescope live_grep<CR>", default_opts)
 keymap("n", "<leader>gd", ":Telescope git_status<CR>", default_opts)
-keymap("n", "<leader>fb", ":Telescope buffers", default_opts)
+keymap("n", "<leader>b", ":Telescope git_branches<CR>", default_opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", default_opts)
 
 -- Tree
 keymap("n", "<C-b>", ":NvimTreeToggle<CR>", default_opts)
 keymap("i", "<C-b>", ":NvimTreeToggle<CR>", default_opts)
 keymap("v", "<C-b>", ":NvimTreeToggle<CR>", default_opts)
-
--- LSP
-keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', default_opts)
-keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', default_opts)
-keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', default_opts)
 
 -- Editor 
 keymap('n', '<A-Down>', ':m .+1<CR>==', default_opts)
@@ -74,4 +75,18 @@ keymap('i', '<A-Up>', '<Esc>:m .-2<CR>==gi', default_opts)
 
 keymap('v', '<A-Down>', ":m '>+1<CR>gv==gv", default_opts)
 keymap('v', '<A-Up>', ":m '<-2<CR>gv==gv", default_opts)
+
+keymap('n', '<S-A-Down>', ':t .<CR>==', default_opts)
+keymap('n', '<S-A-Up>', ':t .-1<CR>==', default_opts)
+
+keymap('i', '<S-A-Down>', '<Esc>:t .<CR>==gi', default_opts)
+keymap('i', '<S-A-Up>', '<Esc>:t .-1<CR>==gi', default_opts)
+
+keymap('v', '<S-A-Down>', ":t '><CR>gv==gv", default_opts)
+keymap('v', '<S-A-Up>', ":t '<-1<CR>gv==gv", default_opts)
+
+keymap('n', '<S-Down>', '<C-W><C-J>', default_opts)
+keymap('n', '<S-Up>', '<C-W><C-K>', default_opts)
+keymap('n', '<S-Left>', '<C-W><C-H>', default_opts)
+keymap('n', '<S-Right>', '<C-W><C-L>', default_opts)
 

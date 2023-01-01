@@ -94,6 +94,8 @@ function M.setup()
             end,
         }
 
+        use 'ThePrimeagen/vim-be-good'
+
         -- Better icons
         use {
             "kyazdani42/nvim-web-devicons",

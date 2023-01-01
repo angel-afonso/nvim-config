@@ -71,10 +71,13 @@ function M.setup()
         command = "silent call CocActionAsync('highlight')",
         desc = "Highlight symbol under cursor on CursorHold"
     })
+    
+    vim.cmd[[autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')]]
+
 
 
     -- Symbol renaming.
-    keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
+    keyset("n", "rn", "<Plug>(coc-rename)", {silent = true})
 
 
     -- Formatting selected code.
